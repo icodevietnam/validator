@@ -1,0 +1,24 @@
+{
+	"name": "Validator Plugin",
+	"license": "Icoding",
+	"authors": [
+		"Louis Phan <icoding.active@gmail.com>"
+	],
+	"description": "Validation Example.",
+	"homepage": "icodevietnam.com",
+	"keywords": [
+		"jquery",
+		"plugin",
+		"validator",
+		"jquery-plugin"
+		],
+	"main": "src/jquery.validator.js",
+	"dependencies": {
+		"jquery": "1"
+	},
+	"ignore": [
+		"npm-debug.log",
+		"bower_components",
+		"node_modules"
+	]
+}
