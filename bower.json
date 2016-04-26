@@ -14,7 +14,8 @@
 		],
 	"main": "src/jquery.validator.js",
 	"dependencies": {
-		"jquery": "1"
+		"jquery": "2.2.3",
+  		"bootstrap": "3.3.6"
 	},
 	"ignore": [
 		"npm-debug.log",

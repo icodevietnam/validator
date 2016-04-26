@@ -1,0 +1,44 @@
+<html>
+	<head>
+		<title>Test Plugin Validation</title>
+		<script type="text/javascript" src="/validator/dist/jquery.validator.min.js"></script>
+	</head>
+	<body>
+		<h1>Test Jquery Validate Plugin</h1>
+		<form action="thanks.htm" class="required-form" method="post">
+			<ol class="forms">
+				<li>
+					<label for="name"><em class="required">*</em> Name</label>
+					<input type="text" name="name" id="name" required />
+				</li>
+				<li>
+					<label for="email"><em class="required">*</em> Email</label>
+					<input type="text" name="email" id="email" class="email" />
+				</li>
+				<li>
+					<label for="website">Website</label>
+					<input type="text" name="website" id="website" />
+				</li>
+				<li>
+					<label for="comment"><em class="required">*</em> Comment</label>
+					<textarea name="comment" id="comment"></textarea>
+				</li>
+				<li class="buttons">
+					<button type="submit">Submit</button>
+				</li>
+			</ol>
+		</form>
+		<script>
+			$(document).ready(function() {
+				$('form.required-form').validator({
+					required : {
+						name : true,
+						email : true,
+						website : true
+					}
+				});
+
+			});
+		</script>
+	</body>
+</html>
