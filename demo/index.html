@@ -2,26 +2,41 @@
 	<head>
 		<title>Test Plugin Validation</title>
 		<script type="text/javascript" src="/validator/dist/jquery.validator.min.js"></script>
+		<style type="text/css">
+		.error{
+			font-weight: bold;
+			color: red;
+		}
+		</style>
 	</head>
 	<body>
 		<h1>Test Jquery Validate Plugin</h1>
-		<form action="thanks.htm" class="required-form" method="post">
+		<form action="thanks.htm" class="required-form" method="post" novalidate="novalidate">
 			<ol class="forms">
 				<li>
 					<label for="name"><em class="required">*</em> Name</label>
-					<input type="text" name="name" id="name" required />
+					<input type="text" name="name" id="name" data-label="Name" required />
 				</li>
 				<li>
 					<label for="email"><em class="required">*</em> Email</label>
-					<input type="text" name="email" id="email" class="email" />
+					<input type="text" name="email" id="email" data-label="Email" class="email" />
 				</li>
 				<li>
-					<label for="website">Website</label>
-					<input type="text" name="website" id="website" />
+					<label for="password">Password</label>
+					<input type="password" name="password" data-label="Password" id="password" />
+				</li>
+				<li>
+					<label for="password">Confirm Password</label>
+					<input type="password" name="confirmPassword" data-label="Confirm password" id="confirmPassword" />
+				</li>
+				<li>
+					<label for="age"><em class="required">*</em> Age</label>
+					<input type="text" name="age" data-label="Age" id="age" />
 				</li>
 				<li>
 					<label for="comment"><em class="required">*</em> Comment</label>
-					<textarea name="comment" id="comment"></textarea>
+					<input type="radio" name="gender" value="male" checked="true" data-label="Gender" /> Male
+					<input type="radio" name="gender" value="female" data-label="Gender" /> Female
 				</li>
 				<li class="buttons">
 					<button type="submit">Submit</button>
@@ -34,7 +49,23 @@
 					required : {
 						name : true,
 						email : true,
-						website : true
+						password : true,
+						confirmPassword : true,
+						age : true,
+						gender : true
+					},
+					email : {
+						email : true
+					},
+					number : {
+						age : true
+					},
+					max : {
+						name : 15,
+						password : 15
+					},
+					equalTo:{
+						confirmPassword : 'password'
 					}
 				});
 
